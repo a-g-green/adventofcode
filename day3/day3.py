@@ -1,5 +1,3 @@
-import pdb
-
 # open and read file line by line
 input = open('input.txt')
 cuts = input.readlines()

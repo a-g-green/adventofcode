@@ -1,5 +1,3 @@
-import pdb
-
 # open and read file line by line
 input = open('input.txt')
 cuts = input.readlines()
@@ -54,13 +52,14 @@ for i in range(len(cuts)):
         for y in range(colstart[i], colstart[i] + collen[i]):
             insert_cut(x, y)
 
+# function for checking each row of a cut for overlaps
 def check_row(i, x):
     for y in range(colstart[i], colstart[i] + collen[i]):
         # if any square in cut overlaps, we can't use it
         if grid[x][y] >= 2:
             # we found an overlap
             return 0
-    # if x is last row in cut and we made it to end with no duplicates, we have it
+    # if x is last row in cut and we made it to end with no duplicates, we have our solution
     if x == rowstart[i] + rowlen[i] - 1:
         return 2
     # we made it through the whole row with no overlaps
@@ -73,6 +72,7 @@ for i in range(len(cuts)):
         # if check_row returns 0, we can't use cut
         if check_row(i, x) == 0:
             break
+        # print id of solution cut
         elif check_row(i, x) == 2:
             print(id[i])
             break
