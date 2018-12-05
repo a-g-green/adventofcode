@@ -2,7 +2,7 @@
 poly = []
 with open('input.txt') as input:
     for char in input.read():
-        if not char == '\n' and not char == (''):
+        if not char == '\n':
             poly.append(char)
 
 # recursive function to eliminate pairs of letters
