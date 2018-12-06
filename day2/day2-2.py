@@ -10,7 +10,7 @@ for boxid in boxids:
 
     ids.append([i for i in boxid])
 
-# compare boxid to every other boxid in boxids, looking for a diff of exactly 1 (e.g. (b -> c) = 1, (ab -> ac) = 1, (ab -> ad) = 2)
+# compare boxid to every other boxid in boxids, looking for exactly 1 difference
 for x in range(len(ids)):
     for i in range(len(boxids)):
         boxids[i] = boxids[i].rstrip()
